@@ -29,7 +29,8 @@ public class Message {
 
     public boolean checkMessageLength() {
         if (messageText.length() <= MAX_MESSAGE_LENGTH) {
-            System.out.println("Message ready to send.");
+            int charactersRemaining = MAX_MESSAGE_LENGTH - messageText.length();
+            System.out.println("Message ready to send. Characters remaining: " + charactersRemaining + ".");
             return true;
         }
 
