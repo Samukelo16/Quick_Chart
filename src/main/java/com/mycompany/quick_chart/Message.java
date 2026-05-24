@@ -8,6 +8,9 @@ import java.util.Scanner;
 public class Message {
 
     private static final int MAX_MESSAGE_LENGTH = 250;
+    private static final int ACTION_DELETE = 0;
+    private static final int ACTION_SEND = 1;
+    private static final int ACTION_STORE = 2;
     private static int totalMessagesSent = 0;
 
     private final String messageID;
@@ -76,17 +79,17 @@ public class Message {
 
         int choice = readInt(scanner);
 
-        if (choice == 1) {
+        if (choice == ACTION_SEND) {
             totalMessagesSent++;
             return "Message successfully sent.";
         }
 
-        if (choice == 2) {
+        if (choice == ACTION_STORE) {
             storeMessage();
             return "Message stored.";
         }
 
-        if (choice == 0) {
+        if (choice == ACTION_DELETE) {
             return "Message deleted.";
         }
 
