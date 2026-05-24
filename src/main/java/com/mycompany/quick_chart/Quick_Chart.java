@@ -40,6 +40,7 @@ public class Quick_Chart {
                     System.out.println("Total messages sent: " + Message.returnTotalMessages());
                     break;
                 case 0:
+                    printSessionSummary(messagesCreated);
                     System.out.println("Goodbye! Thanks for using QuickChat.");
                     running = false;
                     break;
@@ -91,6 +92,13 @@ public class Quick_Chart {
         }
 
         return messagesCreated;
+    }
+
+    private static void printSessionSummary(int messagesCreated) {
+        System.out.println("\n=== QuickChat Session Summary ===");
+        System.out.println("Messages created: " + messagesCreated);
+        System.out.println("Messages sent: " + Message.returnTotalMessages());
+        System.out.println("Messages stored: " + Message.returnTotalStoredMessages());
     }
 
     private static boolean askYesNo(Scanner scan, String prompt) {
