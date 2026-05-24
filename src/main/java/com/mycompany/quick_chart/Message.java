@@ -12,6 +12,7 @@ public class Message {
     private static final int ACTION_SEND = 1;
     private static final int ACTION_STORE = 2;
     private static int totalMessagesSent = 0;
+    private static int totalMessagesStored = 0;
 
     private final String messageID;
     private final int messageNumber;
@@ -87,6 +88,7 @@ public class Message {
 
         if (choice == ACTION_STORE) {
             storeMessage();
+            totalMessagesStored++;
             return "Message stored.";
         }
 
@@ -118,6 +120,10 @@ public class Message {
 
     public static int returnTotalMessages() {
         return totalMessagesSent;
+    }
+
+    public static int returnTotalStoredMessages() {
+        return totalMessagesStored;
     }
 
     private int readInt(Scanner scanner) {
