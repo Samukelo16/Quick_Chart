@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class Quick_Chart {
 
+    private static final int MENU_QUIT = 0;
+    private static final int MENU_SEND_MESSAGES = 1;
+    private static final int MENU_SHOW_TOTAL = 2;
+
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         Login login = new Login();
@@ -25,21 +29,21 @@ public class Quick_Chart {
         while (running) {
             System.out.println("\n=== QuickChat Menu ===");
             System.out.println("Messages created: " + messagesCreated + " of " + numMessages);
-            System.out.println("1. Send Messages");
-            System.out.println("2. Show Total Messages Sent");
-            System.out.println("0. Quit");
+            System.out.println(MENU_SEND_MESSAGES + ". Send Messages");
+            System.out.println(MENU_SHOW_TOTAL + ". Show Total Messages Sent");
+            System.out.println(MENU_QUIT + ". Quit");
             System.out.print("Choose an option: ");
 
             int choice = readInt(scan);
 
             switch (choice) {
-                case 1:
+                case MENU_SEND_MESSAGES:
                     messagesCreated = captureMessages(scan, numMessages, messagesCreated);
                     break;
-                case 2:
+                case MENU_SHOW_TOTAL:
                     System.out.println("Total messages sent: " + Message.returnTotalMessages());
                     break;
-                case 0:
+                case MENU_QUIT:
                     printSessionSummary(messagesCreated);
                     System.out.println("Goodbye! Thanks for using QuickChat.");
                     running = false;
