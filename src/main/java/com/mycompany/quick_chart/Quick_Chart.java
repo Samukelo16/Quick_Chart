@@ -24,6 +24,7 @@ public class Quick_Chart {
 
         while (running) {
             System.out.println("\n=== QuickChat Menu ===");
+            System.out.println("Messages created: " + messagesCreated + " of " + numMessages);
             System.out.println("1. Send Messages");
             System.out.println("2. Show Total Messages Sent");
             System.out.println("0. Quit");
