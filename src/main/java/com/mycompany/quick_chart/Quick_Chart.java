@@ -59,10 +59,10 @@ public class Quick_Chart {
             System.out.println("\nMessage " + currentMessageNumber + " of " + maxMessages);
 
             System.out.print("Enter recipient phone number (+27...): ");
-            String recipient = scan.nextLine();
+            String recipient = scan.nextLine().trim();
 
             System.out.print("Enter your message (max 250 chars): ");
-            String messageText = scan.nextLine();
+            String messageText = scan.nextLine().trim();
 
             Message msg = new Message(currentMessageNumber, recipient, messageText);
 
